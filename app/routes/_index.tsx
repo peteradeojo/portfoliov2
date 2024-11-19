@@ -1,53 +1,98 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
+
+import {
+  FaGithub,
+  FaTwitter,
+  FaGooglePlus,
+  FaInbox,
+  FaMailBulk,
+  FaLinkedin,
+} from "react-icons/fa";
+import { FaX, FaXTwitter } from "react-icons/fa6";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Peter Ade-Ojo" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
 
 export default function Index() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Welcome to <span className="sr-only">Remix</span>
-          </h1>
-          <div className="h-[144px] w-[434px]">
-            <img
-              src="/logo-light.png"
-              alt="Remix"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src="/logo-dark.png"
-              alt="Remix"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
-            What&apos;s next?
-          </p>
-          <ul>
-            {resources.map(({ href, text, icon }) => (
-              <li key={href}>
-                <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+    <div className="flex flex-col h-screen items-center justify-center">
+      <p className="text-3xl mb-2 font-bold">Hi!</p>
+      <p className="text-3xl mb-2 font-bold">I'm Boluwatife,</p>
+      <p className="text-xl font-bold">professionals call me Peter.</p>
+      <div className="flex gap-x-2 py-4 items-center justify-center">
+        <Link
+          to={"/about"}
+          className="text-blue-500 hover:underline px-4 py-2 hover:bg-slate-700 rounded"
+        >
+          About
+        </Link>
+        <a
+          href={"https://read.cv/peteru"}
+          target="_blank"
+          className="text-blue-500 hover:underline px-4 py-2 hover:bg-slate-700 rounded"
+        >
+          Resume
+        </a>
+        <Link
+          to={"/projects"}
+          className="text-blue-500 hover:underline px-4 py-2 hover:bg-slate-700 rounded"
+        >
+          Projects
+        </Link>
+        <Link
+          to={"/contact"}
+          className="text-blue-500 hover:underline px-4 py-2 hover:bg-slate-700 rounded"
+        >
+          Contact Me
+        </Link>
+      </div>
+
+      <div className="flex gap-x-8 py-4 items-center justify-center">
+        <a
+          href={"https://github.com/peteradeojo"}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FaGithub
+            size={24}
+            className="hover:text-green-500 duration-200 hover:scale-125"
+          />
+        </a>
+        <a
+          href="https://x.com/boluwatifee__"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FaXTwitter
+            size={24}
+            className="hover:text-blue-500 duration-200 hover:scale-125"
+          />
+        </a>
+        <a
+          href="mailto:adeojopeter@gmail.com"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FaMailBulk
+            size={24}
+            className="hover:text-red-500 duration-200 hover:scale-125"
+          />
+        </a>
+        <a
+          href="https://linkedin.com/in/peter-adeojo"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FaLinkedin
+            size={24}
+            className="hover:text-blue-600 duration-200 hover:scale-125"
+          />
+        </a>
       </div>
     </div>
   );

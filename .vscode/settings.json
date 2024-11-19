@@ -1,0 +1,9 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1500,
+    "[jsx-tags]": {
+        "javascript.autoClosingTags": true,
+        "typescript.autoClosingTags": true,
+    },
+    "editor.linkedEditing": true
+}
